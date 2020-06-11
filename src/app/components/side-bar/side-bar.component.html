@@ -1,0 +1,44 @@
+<!-- <ul>
+    <li><a href="#" routerLink="all-tasks">All Tasks</a></li>
+    <li><a href="#" routerLink="my-tasks">My Tasks</a></li>
+    <li><a href="#" routerLink="my-group-tasks">My Group Tasks</a></li>
+</ul>
+
+<ul>
+    <li><a href="#" routerLink="find-a-case">Find a Case</a></li>
+</ul>
+
+<ul>
+    <li><a href="#" routerLink="historical-cases">Historical Cases</a></li>
+    <li><a href="#" routerLink="active-cases">Active Cases</a></li>
+    <li><a href="#" routerLink="my-dashboard">My Dashboard</a></li>
+</ul> -->
+
+<div class="py-3">
+    <ul>
+        <li><a [routerLink]="'all-tasks'" [state]="{ routeTo: 'all-tasks' }">All Tasks</a></li>    
+        <li><a [routerLink]="'my-tasks'"[state]="{ routeTo: 'my-tasks' }"> My Tasks</a></li>
+        <li><a [routerLink]="'my-group-tasks'" [state]="{ routeTo: 'my-group-tasks'}">My Group Tasks</a></li>
+    </ul>
+    
+    <ul>
+        <li><a href="#" routerLink="find-a-case">Find a Case</a></li>
+    </ul>
+    
+    <ul>
+        <li><a [routerLink]="'historical-cases'" [state]="{ task: task }">Historical cases</a></li>
+        <li><a href="#" routerLink="active-cases">Active Cases</a></li>
+        <li><a href="#" routerLink="my-dashboard">My Dashboard</a></li>
+    </ul>
+</div>
+
+
+<!-- All Tasks
+My Tasks
+My Group Tasks
+
+Find a Case
+
+Historical cases
+Active Cases
+My Dashboard -->

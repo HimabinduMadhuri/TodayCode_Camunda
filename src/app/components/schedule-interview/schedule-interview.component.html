@@ -1,0 +1,92 @@
+<div *ngIf="task.name =='Schedule Interview'">
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+              <form autocomplete="off" [formGroup]="angForm" novalidate>
+                <div class="form-group">
+                  <label for="name" class=" text-primary font-weight-bold">Candidate Name</label>
+                  <input type="text" class="form-control" id="name" formControlName="name" >
+                </div>
+                <div class="form-group">
+                  <label  for="tenantID" class="p-2 text-primary font-weight-bold">Candidate ID</label>
+                  <input type="text" class="form-control" id="tenantID" formControlName="tenantID" >
+                </div>
+                <div class="form-group">
+                  <label  for="assignee"  class="p-2 text-primary font-weight-bold">Candidate Info</label>
+                  <input type="text" class="form-control" id="assignee" formControlName="assignee" >
+                </div>
+                <div class="form-group">
+                  <label for="description" class="p-2 text-primary font-weight-bold">Job Description</label>
+                  <input type="text" class="form-control" id="description" formControlName="description" >
+                </div>
+                <div class="form-group">
+                  <label  for="interviewer" class="p-2 text-primary font-weight-bold">Interviewer 1</label>
+                  <select  id="interviewer" class="form-control"  formControlName ="interviewer" >
+                    <option>Demo</option>
+                    <option>User 1</option>
+                    <option>User 2</option>
+                    </select>
+                  </div>
+                 <div class="form-group">
+                  <label for="interviewerDate" class="text-primary p-2 font-weight-bold">Interview Date</label>
+                  <div class="input-group">
+                    <input type="date" class="form-control" id="interviewerDate" (change)="dateChange('interviewerDate')"  formControlName="interviewerDate" >
+                   </div>
+                 </div>
+                  <div class="form-group text-right" >
+                    <button (click)="saveOne()"
+                            class="btn btn-success mr-3">Save</button>
+  
+                    <button (click)="completeOne()"
+                            class="btn btn-danger ">Complete</button>
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<div *ngIf="task.name =='Schedule Interview 2'">
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+              <form autocomplete="off" [formGroup]="angForm" novalidate>
+              <div class="form-group">
+                <label for="interviewerDate" class="text-primary pl-2 font-weight-bold">Interview 2 Date</label>
+                <div class="input-group">
+                  <input type="date" class="form-control" id="interviewerDate" (change)="dateChange()" formControlName="interviewerDate">
+                  
+                </div>
+              </div>
+                <div class="form-group">
+                  <label for="interviewer" class=" p-2 text-primary font-weight-bold ">Interviewer 2</label>
+                  <select  id="interviewer" class="form-control" formControlName ="interviewer"  >
+                    <option>Demo</option>
+                    <option>User1</option>
+                    <option>User2</option>
+                  </select>
+                </div>
+                <div class="form-group text-right" >
+                  <button (click)="saveTwo()"
+                          class="btn btn-success mr-3">Save</button>
+                  <button (click)="completeTwo()"
+                          class="btn btn-danger ">Complete</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
+</div>

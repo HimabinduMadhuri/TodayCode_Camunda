@@ -1,0 +1,25 @@
+.nav-link{
+    cursor: pointer !important;
+}
+.placeholder-style::placeholder{
+    font-style: italic;
+}
+
+.info{
+    font-size: smaller;
+}
+.info span:nth-child(1){
+    font-weight: bolder;
+    font-size: medium;
+}
+.info span:nth-child(2){
+    font-style: italic;
+}
+.bg-gray {
+    background-color: #ccc;
+}
+
+th {
+    white-space: nowrap;
+    overflow: hidden;
+  }

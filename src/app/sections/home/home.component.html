@@ -1,0 +1,29 @@
+<div class="tab-container">
+    <ul class="tabs ">
+        <li  [ngClass]=" {'tab-item':true,'active-tab': activeTab==1 }" (click)="setActiveTab(1)">Task View</li>
+        <li  [ngClass]=" {'tab-item':true,'active-tab': activeTab==2 }" (click)= "setActiveTab(2)">Case Info</li>   
+        <li  [ngClass]=" {'tab-item':true,'active-tab': activeTab==3 }" (click)= "setActiveTab(3)">Attachment</li>
+        <li  [ngClass]=" {'tab-item':true,'active-tab': activeTab==4 }" (click)= "setActiveTab(4)">Audit Trail</li>
+    </ul>
+    <div>
+        <div *ngIf="activeTab == 1 && task && (task.name=='Schedule Interview' || task.name=='Schedule Interview 2')">
+            <app-schedule-interview></app-schedule-interview> 
+        </div>
+        <div *ngIf="activeTab == 1 && task && (task.name=='Interview 1 Feedback' || task.name=='Interview 2 Feedback')">
+            <app-interviewer></app-interviewer> 
+        </div>
+        <div  class="tab-content" *ngIf="activeTab == 2">
+            <app-case-info></app-case-info>
+        </div>
+        <div class="tab-content" *ngIf="activeTab == 3">
+        </div>
+        <div class="tab-content" *ngIf="activeTab == 4">
+            <app-trail-tabs></app-trail-tabs>
+        </div> 
+    </div>
+</div>
+
+
+
+
+

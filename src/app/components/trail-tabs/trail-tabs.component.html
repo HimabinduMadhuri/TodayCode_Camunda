@@ -1,0 +1,25 @@
+
+<table>
+    <thead>
+        <tr>
+            <th>TaskName</th>
+            <th>Status</th>
+            <th>Owner</th>
+            <th>Assignee</th>
+            <th>StartTime</th>
+            <th>EndTime</th>
+            <th>Due</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let trail of allTrails" >
+            <td>{{trail.name}}</td>
+            <td>{{trail.deleteReason}}</td>
+            <td>{{trail.owner}}</td>
+            <td>{{trail.assignee}}</td>
+            <td>{{trail.startTime | date:'yyyy-MM-dd hh:mm'}}</td>
+            <td>{{trail.endTime | date:'yyyy-MM-dd hh:mm'}}</td>
+            <td>{{trail.due}}</td>
+        </tr>
+    </tbody>
+</table>

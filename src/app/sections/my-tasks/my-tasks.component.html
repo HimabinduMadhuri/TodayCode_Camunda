@@ -1,0 +1,38 @@
+<!-- <div class="tab-container">
+    <ul class="tabs">
+        <li class="tab-item active">Task View</li>
+        <li class="tab-item">Case Info</li>
+        <li class="tab-item">Attachment</li>
+        <li class="tab-item">Audit Trail</li>
+    </ul>
+    <div class="tab-content">
+        <div></div>
+    </div>
+</div>
+ -->
+ <table class="table table-striped table-responsive-md">
+    <thead>
+        <tr>
+            <th>CaseId</th>
+            <th>Task Name</th>
+            <th>Priority</th>
+            <th>Asignee</th>
+            <th>Start Date</th>
+            <th>Due Date</th>
+            <th>Followup Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let task of allTasks | sortPriority : 'priority' |  sort: '-created'">
+            <td>{{task.processInstanceId}}</td>
+            <td><a [routerLink]="''" [state]="{ task: task,routeTo:'/my-tasks' }">  {{task.name}}</a>  </td>
+            <td>{{task.priority}}</td>
+            <td>{{task.assignee}}</td>
+            <td>{{task.created | date: 'yyyy-MM-dd hh:mm'}}</td>
+            <td *ngIf="showDateInRedColor(task.due)" style="color:red">{{task.due | date: 'yyyy-MM-dd hh:mm'}}</td>
+            <td *ngIf="!showDateInRedColor(task.due)">{{task.due | date: 'yyyy-MM-dd hh:mm'}}</td>
+            <td *ngIf="showDateInRedColor(task.followUp)" style="color:red">{{task.followUp  | date: 'yyyy-MM-dd hh:mm'}}</td>
+            <td *ngIf="!showDateInRedColor(task.followUp)">{{task.followUp  | date: 'yyyy-MM-dd hh:mm'}}</td>
+        </tr>
+    </tbody>
+</table>
